@@ -1,0 +1,9 @@
+{
+  "rest":{
+    "apiUrl":"https://dummyjson.com"
+  },
+  "system":{
+    "applicationName": "Practice Config",
+    "applicationUrl":"http://localhost:3000"
+  }
+}

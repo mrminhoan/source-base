@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["DOM", "ES2020"],
+    "module": "ESNext",
+    "jsx": "react-jsx",
+    "noEmit": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "bundler",
+    "useDefineForClassFields": true,
+    "allowImportingTsExtensions": true,
+    "paths": {
+      "@utils": ["./src/utils"],
+      "@service": ["./src/service"],
+      "@models": ["./src/models"],
+      "@constants": ["./src/constants"],
+      "@components": ["./src/components"],
+      "@pages/*": ["./src/pages/*"],
+      "@routes/*": ["./src/routes/*"]
+    }
+  },
+  "include": ["src"]
+}
