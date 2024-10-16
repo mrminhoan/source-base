@@ -1,3 +1,4 @@
+import { PATH } from '@constants';
 import { NavLink, Outlet } from 'react-router-dom';
 
 function Product() {
@@ -5,10 +6,12 @@ function Product() {
     <>
       <div>Product Page</div>
       <button>
-        <NavLink to="/product/detail">Product detail</NavLink>
+        <NavLink to={PATH.PRODUCT.DETAIL} state={{ read: true }}>
+          Product detail
+        </NavLink>
       </button>
       <button>
-        <NavLink to="/product/list">Product List</NavLink>
+        <NavLink to={PATH.PRODUCT.LIST}>Product List</NavLink>
       </button>
       <Outlet />
     </>

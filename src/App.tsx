@@ -1,4 +1,5 @@
-import { GetMenu } from '@routes/menu/menu';
+import { GetMenu } from "@components";
+
 
 const App = () => {
   return (

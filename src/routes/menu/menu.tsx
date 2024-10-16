@@ -1,92 +1,61 @@
 import { LoadedAleCore } from '@utils';
 import { ReactNode } from 'react';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { PATH } from '@constants';
+import { IMenu } from '@models';
+import { InitPath } from '@routes/guard-route';
 
-const NotFound = LoadedAleCore(() => import('@pages/not-found/not-found'));
-const Login = LoadedAleCore(() => import('@pages/auth/login/login'));
-const Register = LoadedAleCore(() => import('@pages/auth/sign-up/sign-up'));
+
 const ProductList = LoadedAleCore(() => import('@pages/products/product-list'));
 const ProductDetail = LoadedAleCore(
   () => import('@pages/products/product-detail'),
 );
 const Product = LoadedAleCore(() => import('@pages/products/product'));
+const Feeback = LoadedAleCore(() => import('@pages/feedback/feedback'));
+const FeedbackDetail = LoadedAleCore(() => import('@pages/feedback/detail'));
+const FeebackList = LoadedAleCore(() => import('@pages/feedback//list'));
 
-interface IMenu {
-  title: string;
-  path: string;
-  exact: boolean;
-  element: ReactNode;
-  children: Partial<IMenu>[];
-  to: string;
-  search: string;
-}
-
-const path = [
+export const path = InitPath([
   {
-    path:"", to:"product"
-  },
-  {
-    path: 'login',
-    element: <Login />,
-  },
-  {
-    path: 'sign-up',
-    element: <Register />,
+    path: '',
+    to: 'product',
   },
   {
     title: 'Product',
-    path: 'product',
+    path: PATH.PRODUCT.ROOT,
     element: <Product />,
     children: [
       {
-        path:"", to:"list"
+        path: '',
+        to: 'list',
       },
       {
         title: 'Product Detail',
-        path: 'detail',
+        path: PATH.PRODUCT.DETAIL,
         element: <ProductDetail />,
       },
       {
         title: 'Product List',
-        path: 'list',
+        path: PATH.PRODUCT.LIST,
         element: <ProductList />,
       },
     ],
   },
-];
-
-export const GetMenu = () => {
-  const ItemRoute = (item: Partial<IMenu>) => {
-    const {search} = useLocation()
-    const { path, element, children, to } = item;
-    return to ? (
-      <Route
-        path={path}
-        element={
-          <Navigate
-            to={{
-              pathname: to,
-              search: search,
-            }}
-          />
-        }
-        key={path}
-      >
-        {Array.isArray(children) && ListRoute(children)}
-      </Route>
-    ) : (
-      <Route path={path} element={element} key={path}>
-        {Array.isArray(children) && ListRoute(children)}
-      </Route>
-    );
-  };
-  const ListRoute = (list: Partial<IMenu>[]) => {
-    return list.map((item) => ItemRoute(item));
-  };
-  return (
-    <Routes>
-      {ListRoute(path)}
-      <Route path={'*'} element={<NotFound />} />
-    </Routes>
-  );
-};
+  {
+    title: 'Feedback',
+    path: PATH.FEEDBACK.ROOT,
+    element: <Feeback />,
+    children: [
+      {
+        title: 'Feedback Detail',
+        path: PATH.FEEDBACK.DETAIL,
+        element: <FeedbackDetail />,
+      },
+      {
+        title: 'Feedback List',
+        path: PATH.FEEDBACK.LIST,
+        element: <FeebackList />,
+      },
+    ],
+  },
+]);

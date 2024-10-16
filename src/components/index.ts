@@ -1,1 +1,2 @@
-export {WrapperConfig} from "./wrapper-config"
+export {WrapperConfig} from "./wrapper-config";
+export {GetMenu} from "./get-menu"

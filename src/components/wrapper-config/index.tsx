@@ -2,7 +2,6 @@ import { setConfigStorage } from '@utils';
 import { ReactNode } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import { GetMenu } from '@routes/menu/menu';
 
 interface IPropsConfig {
   id?: string;
