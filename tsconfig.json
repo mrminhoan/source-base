@@ -21,9 +21,9 @@
       "@pages/*": ["./src/pages/*"],
       "@routes/*": ["./src/routes/*"],
       "@layout/*": ["./src/layout/*"],
-
+      "@custom-prototype": ["./src/custom-prototype"],
     },
     "noImplicitAny": false
   },
-  "include": ["src"]
+  "include": ["src", "index.d.ts"],
 }

@@ -14,6 +14,12 @@ export default defineConfig({
       '@pages': path.resolve(__dirname, "src/pages"),
       '@routes': path.resolve(__dirname, "src/routes"),
       '@layout': path.resolve(__dirname, "src/layout"),
+      '@custom-prototype': path.resolve(__dirname, "src/custom-prototype"),
     },
+    include: [
+      'src/**/*.ts',
+      'index.d.ts',
+    ],
   },
+
 });

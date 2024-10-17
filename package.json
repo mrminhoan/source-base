@@ -10,9 +10,11 @@
     "preview": "rsbuild preview"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.5.1",
     "@loadable/component": "^5.16.4",
     "@types/loadable__component": "^5.13.9",
     "@types/node": "^22.7.5",
+    "antd": "^5.21.4",
     "axios": "^1.7.7",
     "i": "^0.3.7",
     "npm": "^10.9.0",

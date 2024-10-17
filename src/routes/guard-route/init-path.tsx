@@ -20,6 +20,7 @@ export const InitPath = (children: Partial<IMenu>[]): Partial<IMenu>[] => {
     },
     {
       path: '',
+      title:"Menu",
       element: <GuardPrivateRoute component={<HomePage />} />,
       children
     },

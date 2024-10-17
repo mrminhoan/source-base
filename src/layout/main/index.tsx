@@ -1,3 +1,4 @@
+import { Sidebar } from '@components';
 import { ReactNode } from 'react';
 
 interface ILayoutProps {
@@ -7,8 +8,13 @@ function MainLayout(props: ILayoutProps) {
   const { children } = props;
   return (
     <>
-      <h1>Menu here</h1>
-      {children}
+      <div style={{ display: 'flex'  }}>
+        <Sidebar />
+        <div style={{marginLeft:"3rem"}}>
+          <h1>Menu here</h1>
+          {children}
+        </div>
+      </div>
     </>
   );
 }

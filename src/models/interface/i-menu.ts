@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 
 export interface IMenu {
+  key: string,
   title: string;
   path: string;
   exact: boolean;
@@ -8,4 +9,5 @@ export interface IMenu {
   children: Partial<IMenu>[];
   to: string;
   search: string;
+  isShowSidebar: boolean
 }

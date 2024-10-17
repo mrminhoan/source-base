@@ -2,7 +2,7 @@ import { setConfigStorage } from '@utils';
 import { ReactNode } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-
+import "@custom-prototype"
 interface IPropsConfig {
   id?: string;
   children: ReactNode;
