@@ -14,7 +14,7 @@
     "allowImportingTsExtensions": true,
     "paths": {
       "@utils": ["./src/utils"],
-      "@service": ["./src/service"],
+      "@service/*": ["./src/service/*"],
       "@models": ["./src/models"],
       "@constants": ["./src/constants"],
       "@components": ["./src/components"],

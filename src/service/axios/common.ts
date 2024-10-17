@@ -1,22 +1,32 @@
+import { IConfig, IPromiseStateResponse } from '@models';
+import { configStorage } from '@utils';
 import axios, { AxiosRequestConfig } from 'axios';
 
 const instance = axios.create({
   timeout: 300000,
   timeoutErrorMessage: 'Connection is timeout exeeded',
 });
+const getConfig = () => {
+  return configStorage.getValue();
+};
 
+const getUrlByKey = (key: keyof IConfig['rest']) => {
+  return getConfig()['rest'][key];
+};
 export const BaseService = {
-  get<T = any>({ url, baseUrl, payload }: any): Promise<T> {
+  get<T = any>(url, config): Promise<IPromiseStateResponse<T>> {
     return instance
       .get(url, {
-        baseURL: baseUrl,
-        params: payload
+        ...config,
+        baseURL: getUrlByKey('apiUrl'),
       })
-      .then((res) => {
-        return res;
+      .then((res: IPromiseStateResponse<T>) => {
+        //... Do Something
+        return Promise.resolve({ ...res });
       })
       .catch((error) => {
-        return error;
+        //Do something
+        return Promise.reject({ ...error });
       });
   },
 };
