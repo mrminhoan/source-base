@@ -1,18 +1,19 @@
 import { PATH } from '@constants';
+import Button from 'antd/es/button';
 import { NavLink, Outlet } from 'react-router-dom';
 
 function Product() {
   return (
     <>
       <div>Product Page</div>
-      <button>
+      <Button>
         <NavLink to={PATH.PRODUCT.DETAIL} state={{ read: true }}>
           Product detail
         </NavLink>
-      </button>
-      <button>
+      </Button>
+      <Button>
         <NavLink to={PATH.PRODUCT.LIST}>Product List</NavLink>
-      </button>
+      </Button>
       <Outlet />
     </>
   );

@@ -1,9 +1,7 @@
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
-import type { MenuProps } from 'antd';
 import { Button, Menu } from 'antd';
 import { useMemo, useState } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
-import { GenMenuList } from '@utils';
+import { useNavigate } from 'react-router-dom';
 import { path } from '@routes/menu/menu';
 
 function Sidebar() {
@@ -26,7 +24,7 @@ function Sidebar() {
         {
           key:"1-1",
           label: "Product Detail",
-          onClick: () => navigate("detail")
+          onClick: () => navigate("product/detail")
         },
         {
           key:"1-2",

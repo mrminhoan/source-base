@@ -1,18 +1,19 @@
 import { PATH } from '@constants';
+import Button from 'antd/es/button/button';
 import { NavLink, Outlet } from 'react-router-dom';
 
 function Feedback() {
   return (
     <div>
       Feedback Page
-      <button>
+      <Button>
         <NavLink to={PATH.FEEDBACK.DETAIL} state={{ read: true }}>
           Feedback detail
         </NavLink>
-      </button>
-      <button>
+      </Button>
+      <Button>
         <NavLink to={PATH.FEEDBACK.LIST}>Feedback List</NavLink>
-      </button>
+      </Button>
       <Outlet />
     </div>
   );
