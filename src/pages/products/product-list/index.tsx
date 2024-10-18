@@ -4,7 +4,8 @@ import { useProductStore } from '../../../store';
 import ProductItem from '../product-item';
 import { Button, Form, Input } from 'antd';
 import { Alert } from 'antd';
-import {watch} from "valtio/utils"
+import { watch } from 'valtio/utils';
+import ButtonAge from './buttonAge';
 function ProductList() {
   const {
     productSnapshot,
@@ -12,6 +13,7 @@ function ProductList() {
     trackingStateChange,
     productStore,
     trackingStateChangeByKey,
+
   } = useProductStore();
   const onFinish = (values) => {
     actionsProductStore.addProduct(values);
@@ -19,14 +21,9 @@ function ProductList() {
   const handleIncreCount = () => {
     return actionsProductStore.incrementCount();
   };
-  const showMesssage = () => {
-    return  alert("Add Product SuccessFully");
-  };
-  // trackingStateChange(productStore.products, showMesssage);
-  // trackingStateChangeByKey(productStore.user, "age", console.log)
-
-
-
+  const handleChangeAge = () =>{
+    return actionsProductStore.changeUseAge()
+  }
 
   return (
     <div className="mt-10">
@@ -68,8 +65,18 @@ function ProductList() {
         </Form.Item>
       </Form>
 
-
-      <Button onClick={() => actionsProductStore.changeUseAge()}>Change User Age</Button>
+      <h1>User infor</h1>
+      <p>User name: {productSnapshot.user.name}</p>
+      {/* <ButtonAge /> */}
+      <Button onClick={handleChangeAge}>Change User Age</Button>
+      {/* <p>{pro}</p> */}
+      <button
+        onClick={() => {
+          productStore.user.name = 'new name';
+        }}
+      >
+        Change name
+      </button>
       <p>TEMREF: {productStore.tempValue.current}</p>
     </div>
   );
