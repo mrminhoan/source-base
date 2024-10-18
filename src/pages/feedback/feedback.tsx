@@ -6,14 +6,16 @@ function Feedback() {
   return (
     <div>
       Feedback Page
-      <Button>
-        <NavLink to={PATH.FEEDBACK.DETAIL} state={{ read: true }}>
-          Feedback detail
-        </NavLink>
-      </Button>
-      <Button>
-        <NavLink to={PATH.FEEDBACK.LIST}>Feedback List</NavLink>
-      </Button>
+      <div className='my-5'>
+        <Button>
+          <NavLink to={PATH.FEEDBACK.DETAIL} state={{ read: true }}>
+            Feedback detail
+          </NavLink>
+        </Button>
+        <Button>
+          <NavLink to={PATH.FEEDBACK.LIST}>Feedback List</NavLink>
+        </Button>
+      </div>
       <Outlet />
     </div>
   );

@@ -46,6 +46,11 @@ function Sidebar() {
           key:"2-2",
           label: "Feedback List",
           onClick: () => navigate("/feedback/list")
+        },
+        {
+          key:"2-3",
+          label: "Editor",
+          onClick: () => navigate("/feedback/editor")
         }
       ]
     }

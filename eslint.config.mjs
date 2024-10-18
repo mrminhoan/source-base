@@ -23,12 +23,15 @@ export default [
     plugins: {
       'react-hooks': reactHooks,
     },
+    extends: ['plugin:valtio/recommended'],
     rules: {
       ...reactHooks.configs.recommended.rules,
       'no-unused-vars': 'off',
       '@typescript-eslint/no-unused-vars': 'off',
-      "no-empty":"off",
-      "@typescript-eslint/no-explicit-any": "warn"
+      'no-empty': 'off',
+      '@typescript-eslint/no-explicit-any': 'warn',
+      'valtio/state-snapshot-rule': 'warn',
+      'valtio/avoid-this-in-proxy': 'warn',
     },
   },
   { ignores: ['dist/'] },

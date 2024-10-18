@@ -11,7 +11,9 @@ const Product = LoadedAleCore(() => import('@pages/products/product'));
 const Feeback = LoadedAleCore(() => import('@pages/feedback/feedback'));
 const FeedbackDetail = LoadedAleCore(() => import('@pages/feedback/detail'));
 const FeebackList = LoadedAleCore(() => import('@pages/feedback//list'));
-
+const EditorHistory = LoadedAleCore(
+  () => import('@pages/feedback/editor-history'),
+);
 export const path = InitPath([
   {
     path: '',
@@ -34,7 +36,6 @@ export const path = InitPath([
         element: <ProductDetail />,
         isShowSidebar: true,
         key: PATH.PRODUCT.DETAIL.combieKeyUrl(PATH.PRODUCT.ROOT),
-
       },
       {
         title: 'Product List',
@@ -69,6 +70,13 @@ export const path = InitPath([
         element: <FeebackList />,
         isShowSidebar: true,
         key: PATH.FEEDBACK.LIST.combieKeyUrl(PATH.FEEDBACK.ROOT),
+      },
+      {
+        title: 'Editor',
+        path: PATH.FEEDBACK.EDITOR,
+        element: <EditorHistory />,
+        isShowSidebar: true,
+        key: PATH.FEEDBACK.EDITOR.combieKeyUrl(PATH.FEEDBACK.ROOT),
       },
     ],
   },

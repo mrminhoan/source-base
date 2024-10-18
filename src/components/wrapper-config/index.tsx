@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import '@custom-prototype';
 import ConfigProvider from 'antd/es/config-provider';
+
 interface IPropsConfig {
   id?: string;
   children: ReactNode;

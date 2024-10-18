@@ -10,5 +10,6 @@ export const PATH = {
     ROOT: 'feedback',
     DETAIL: 'detail',
     LIST: 'list',
+    EDITOR:"editor"
   },
 };
