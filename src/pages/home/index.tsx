@@ -1,14 +1,14 @@
-import MainLayout from '@layout/main';
-import { Outlet } from 'react-router-dom';
+import MainLayout from "@layout/main";
+import {Outlet} from "react-router-dom";
 
 function HomePage() {
-  return (
-    <>
-      <MainLayout>
-        <Outlet />
-      </MainLayout>
-    </>
-  );
+    return (
+        <>
+            <MainLayout>
+                <Outlet />
+            </MainLayout>
+        </>
+    );
 }
 
 export default HomePage;

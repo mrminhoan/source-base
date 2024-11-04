@@ -1,10 +1,11 @@
-import { GetMenu } from "@components";
-
+import {GetMenu} from "@components";
 
 const App = () => {
-  return (
-    <GetMenu />
-  );
+    return (
+        <>
+            <GetMenu />
+        </>
+    );
 };
 
 export default App;

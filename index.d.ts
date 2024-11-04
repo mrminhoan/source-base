@@ -1,4 +1,4 @@
 interface String {
-  combieKeyUrl(...rootPaths: string[]): string;
-  format(...args: string[]): string;
+    combieKeyUrl(...rootPaths: string[]): string;
+    format(...args: string[]): string;
 }

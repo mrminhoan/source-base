@@ -1,9 +1,5 @@
 function FeedbackList() {
-  return (
-    <div>
-      Feedback List Page
-    </div>
-  )
+    return <div>Feedback List Page</div>;
 }
 
-export default FeedbackList
+export default FeedbackList;

@@ -1,9 +1,11 @@
 {
-  "rest":{
-    "apiUrl":"https://dummyjson.com"
-  },
-  "system":{
-    "applicationName": "Practice Config",
-    "applicationUrl":"http://localhost:3000"
-  }
+    "rest": {
+        "apiUrl": "https://dummyjson.com",
+        "apiUrl_v2": "https://fakestoreapi.com",
+        "apiUrl_v3": "https://reqres.in/api"
+    },
+    "system": {
+        "applicationName": "Practice Config",
+        "applicationUrl": "http://localhost:3000"
+    }
 }

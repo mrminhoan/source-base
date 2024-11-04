@@ -1,2 +1,2 @@
-export * from "./menu/menu"
-export * from "./guard-route"
+export * from "./menu/menu";
+export * from "./guard-route";

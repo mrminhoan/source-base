@@ -1,1 +1,1 @@
-export {default as GuardPrivateRoute} from "./guard-private"
+export {default as GuardPrivateRoute} from "./guard-private";

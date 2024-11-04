@@ -1,1 +1,1 @@
-export {default as GuarPublicRoute} from "./guard-public"
+export {default as GuarPublicRoute} from "./guard-public";
